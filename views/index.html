@@ -1,0 +1,240 @@
+<html>
+<head>
+    <title>OData Gallery</title>
+
+    <!-- Metas for mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+
+    <!-- Lib Styles -->
+    <link href="libs/bootstrap-3/bootstrap.no-icons.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap-3/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link href="libs/bootstrap-3/app.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header id="site-header" class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex8-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </button>
+            <a class="navbar-brand" href="#/">OData Gallery
+            </a>
+
+        </div>
+
+        <div class="collapse navbar-collapse navbar-ex8-collapse">
+            <ul class="nav navbar-nav" navigation-menu>
+                <li><a href="#">Top Links</a></li>
+                <li><a href="#">Top Users</a></li>
+                <li><a href="#">About</a></li>
+             
+            </ul>
+  
+            <!-- if user loged in > name else no add button  -->                                        
+            <a id="btn-add-odata-link" class="btn btn-success pull-right {{#if user}}   {{else}} hidden {{/if}}" data-toggle="modal" href="#modal-new-odata-link" style="margin-top:7px" >Add New Link</a>
+            <a id="dashboard" class="btn btn-success pull-right {{#if user}}   {{else}} hidden {{/if}}" data-toggle="modal" href="/dashboard" style="margin-right:7px;margin-top:7px">Dashboard</a>
+           
+             <a id="Login" class="btn btn-success pull-right " data-toggle="modal" href="{{#if user}} /logout  {{else}} #modal-login-link {{/if}}" style="margin-top:7px;margin-right:7px  ">
+
+            {{#if user}}
+                {{user.UserName}} - Logout
+            {{else }}
+                Login
+            {{/if}} 
+            </a>
+      
+              <!--<li class="pull-right" style="color:green"> {{#if user}} {{user.UserName}} {{/if}}  </li>-->
+ 
+        </div>
+    </header>
+
+    <div class="container">
+       {{#each sites}} 
+          <div class="row">
+           <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <ul class="container list-unstyled" id="odata-links-list">
+                    <li class="row odata-link">
+                        <div class="col-md-2">
+                            <img class="img-responsive img-thumbnail" src="{{this.Picture}}" />
+                            <span class="odata-version label label-success"><small>OData server.</small><strong>3.0</strong></span>
+
+                            <ul class="features list-unstyled list-inline">
+                                <li class="feature active"><i class="icon-user"></i></li>
+                                <li class="feature active"><i class="icon-lock"></i></li>
+                                <li class="feature active"><i class="icon-star"></i></li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-10">
+                            <label class="title"> {{this.SiteName}}</label>
+
+                          <a class="link" href="{{this.SiteUrl}}" target="blank">Open !</a> 
+
+                            <p class="description">  {{this.Description}}  </p>
+                           
+                            <ul class="tags list-unstyled list-inline">
+
+                                
+                           {{sites.Tags}}
+                            {{#each sites.Tags}}
+                                <li><a href="{{this.site}}">{{this.tags}} Tags ddsfsdf</a></li>
+                                <!--<li><a href="/tags/movies"></a></li>
+                                <li><a href="/tags/cinema">cinema</a></li>
+                                <li><a href="/tags/actor">actor</a></li>
+                                <li><a href="/tags/fun">fun</a></li>-->
+                              
+                           {{/each}}
+                            </ul>
+
+                            <div class="user">
+                                <img class="img-responsive img-circle" src="{{this.Picture}}" />
+                               <label class="name">{{this.User}}</label>
+                            </div>
+
+                        </div>
+                     
+                         <script>   console.log({{this.tags}});  </script>                
+                   
+                       
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+          {{/each}}
+    </div>
+
+
+
+
+    <!-- Login Modal -->
+   
+    <form method="post" action="/login" enctype="multipart/form-data">
+    <div class="modal fade" id="modal-login-link" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">login</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                         
+                        <div class="form-group">
+                            <label>UserName</label>
+                            <input name="username" type="text" class="form-control" placeholder="UserName" value="haytham">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>password</label>
+                            <input name="password" type="password" class="form-control" placeholder="Password" value="pass">
+                        </div>
+                        <hr />
+
+                     <!--   <div class="checkbox">
+                            <label>
+                                <input type="checkbox">
+                               Needs Authentication
+                            </label>
+                        </div>-->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <input  type="reset" class="btn btn-default" data-dismiss="modal" value="Cancel"/> 
+                    <input  type="submit" class="btn btn-primary" value="login"/>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.login modal -->
+    </form>
+
+
+
+    <!-- Modal -->
+    <form method="post" action="/add" enctype="multipart/form-data">
+    <div class="modal fade" id="modal-new-odata-link" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Add New Link</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Url</label>
+                            <input name="siteurl" type="text" class="form-control" placeholder="url">
+                        </div>
+                     
+                           <div class="form-group">
+                            <label>SiteName</label>
+                            <input name="sitename" type="text" class="form-control" placeholder="sitename">
+                        </div>
+                     
+
+                        <!-- <div class="form-group">
+                            <label>UserName</label>
+                            <input name="UserName" type="text" class="form-control" placeholder="UserName">
+                        </div>-->
+                     
+                         <div class="form-group">
+                            <label>Description</label>
+                            <input name="Description" type="text" class="form-control" placeholder="Description">
+                        </div>
+                                                 
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <input name="tags" type="text" class="form-control" placeholder="Tags">
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Icon</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+
+                        <hr />
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">
+                               Needs Authentication
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <input  type="reset" class="btn btn-default" data-dismiss="modal" value="Cancel"/> 
+                    <input  type="submit" class="btn btn-primary" value="Add"/>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    </form>
+
+    <!-- Lib Scripts -->
+    <script src="./../libs/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+    <script src="./../libs/bootstrap-3/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

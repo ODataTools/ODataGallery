@@ -1,0 +1,29 @@
+{
+  "name": "best-practices",
+  "description": "Odata",
+  "author": "haytham biadse",
+  "dependencies": {
+    "connect": "2.9.0",
+    "commander": "1.2.0",
+    "range-parser": "0.0.4",
+    "mkdirp": "0.3.5",
+    "cookie": "0.1.0",
+    "buffer-crc32": "0.2.1",
+    "fresh": "0.2.0",
+    "methods": "0.0.1",
+    "send": "0.1.4",
+    "cookie-signature": "1.0.1",
+    "debug": "*",
+	"odata-server" :"*",
+	"swig" :"*" ,
+	"handlebars":"*" ,
+	"consolidate":"*" ,
+	"bcrypt-nodejs":"*" ,
+	"express":"*",
+	"ejs" : "0.8.x"
+  },
+  "devDependencies": {
+    "vows": "0.5.x"
+  },
+  "engine": "node >= 0.4.1" 
+}

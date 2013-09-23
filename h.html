@@ -1,0 +1,327 @@
+<html>
+<head>
+    <title></title>
+    <!-- Lib Styles -->
+    <link href="libs/bootstrap-3/bootstrap.no-icons.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap-3/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link href="libs/bootstrap-3/app.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <h1> </h1>
+
+    <div class="container">
+         
+          <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <ul class="container list-unstyled" id="odata-links-list">
+                      <li class="row odata-link">
+                          <div class="col-md-2">
+                              <img class="img-responsive img-thumbnail" src="imgs\sites\91364download.jpg" />
+                              <span class="odata-version label label-success"><small>OData server.</small><strong>3.0</strong></span>
+
+                              <ul class="features list-unstyled list-inline">
+                                  <li class="feature active"><i class="icon-user"></i></li>
+                                  <li class="feature active"><i class="icon-lock"></i></li>
+                                  <li class="feature active"><i class="icon-star"></i></li>
+                              </ul>
+
+                          </div>
+                          <div class="col-md-10">
+                              <label class="title">google</label>
+
+                              <a class="link" href="http://www.google.com" target="blank">Open !</a>
+
+                              <p class="description">the net  </p>
+
+                              <ul class="tags list-unstyled list-inline">
+
+
+                                  <form name="delete" action="/delete" method="post" onsubmit="deleteSite('NTIzNmY2MzIzZjcyNmFkYzEwMDAwMDAx','google')" enctype="multipart/form-data">
+                                      
+                                      <!--<input type="text" name="userx" value="haytham">-->
+                                      <input name="SiteID" type="hidden" value="NTIzNmY2MzIzZjcyNmFkYzEwMDAwMDAx">
+                                      <input type="submit" class="btn-info pull-right" value="Delete" />
+                                  </form>
+
+                                  <a data-toggle="modal"  href="#myModal"  class="btn-info pull-right"  style="margin-right: 7px;margin-top:-12.9px">Update</a>
+                                   
+                                  <!--Update Model-->  
+                              
+                                      <div class="modal fade" id="NTIzNmY2MzIzZjcyNmFkYzEwMDAwMDAx" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <h4 class="modal-title">Update</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                       <form role="form">
+                                                            <div class="form-group">
+                                                             
+                                                              <button  type="button" class="btn " onclick="update('google,http://www.google.com','4','5')">update</button>   
+                                                             <label>URL</label>
+                                                                <input name="siteurl" type="text" class="form-control" placeholder="url" value="http://www.google.com">
+                                                            </div>
+                                                                
+                                                               <div class="form-group">
+                                                                <label>Site Name</label>
+                                                                <input name="sitename" type="text" class="form-control" placeholder="sitename" value="google">
+                                                            </div>
+                      
+                                                             <div class="form-group">
+                                                                <label>Description</label>
+                                                                <input name="Description" type="text" class="form-control" placeholder="Description">
+                                                            </div>
+                                                 
+                                                            <div class="form-group">
+                                                                <label>Tags</label>
+                                                                <input name="tags" type="text" class="form-control" placeholder="Tags">
+                                                            </div> 
+
+                                                            <div class="form-group">
+                                                                <label>Icon</label>
+                                                                <input type="file" name="image" class="form-control">
+                                                            </div>
+
+                                                            <hr />
+                                                        </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="update('google,http://www.google.com','4','5')"">Close</button>
+                                              <button type="button" class="btn btn-primary" onsubmit="update('google,http://www.google.com','4','5')"> Save changes</button>
+                                            </div>
+                                          </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                      </div><!-- /.modal -->
+
+                                  
+                            
+                              </ul>
+
+                              <div class="user">
+                                  <img class="img-responsive img-circle" src="imgs\sites\91364download.jpg" />
+                                  <label class="name">haytham</label>
+                              </div>
+
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-2"></div>
+
+          </div>
+         
+          <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <ul class="container list-unstyled" id="odata-links-list">
+                      <li class="row odata-link">
+                          <div class="col-md-2">
+                              <img class="img-responsive img-thumbnail" src="imgs\sites\12793download (1).jpg" />
+                              <span class="odata-version label label-success"><small>OData server.</small><strong>3.0</strong></span>
+
+                              <ul class="features list-unstyled list-inline">
+                                  <li class="feature active"><i class="icon-user"></i></li>
+                                  <li class="feature active"><i class="icon-lock"></i></li>
+                                  <li class="feature active"><i class="icon-star"></i></li>
+                              </ul>
+
+                          </div>
+                          <div class="col-md-10">
+                              <label class="title">waze</label>
+
+                              <a class="link" href="https://www.waze.co.il" target="blank">Open !</a>
+
+                              <p class="description">maps,traffic  </p>
+
+                              <ul class="tags list-unstyled list-inline">
+
+
+                                  <form name="delete" action="/delete" method="post" onsubmit="deleteSite('NTIzNmY4YTQzZjcyNmFkYzEwMDAwMDAz','waze')" enctype="multipart/form-data">
+                                      
+                                      <!--<input type="text" name="userx" value="haytham">-->
+                                      <input name="SiteID" type="hidden" value="NTIzNmY4YTQzZjcyNmFkYzEwMDAwMDAz">
+                                      <input type="submit" class="btn-info pull-right" value="Delete" />
+                                  </form>
+
+                                  <a data-toggle="modal"  href="#myModal"  class="btn-info pull-right"  style="margin-right: 7px;margin-top:-12.9px">Update</a>
+                                   
+                                  <!--Update Model-->  
+                              
+                                      <div class="modal fade" id="NTIzNmY4YTQzZjcyNmFkYzEwMDAwMDAz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <h4 class="modal-title">Update</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                       <form role="form">
+                                                            <div class="form-group">
+                                                             
+                                                              <button  type="button" class="btn " onclick="update('waze,https://www.waze.co.il','4','5')">update</button>   
+                                                             <label>URL</label>
+                                                                <input name="siteurl" type="text" class="form-control" placeholder="url" value="https://www.waze.co.il">
+                                                            </div>
+                                                                
+                                                               <div class="form-group">
+                                                                <label>Site Name</label>
+                                                                <input name="sitename" type="text" class="form-control" placeholder="sitename" value="waze">
+                                                            </div>
+                      
+                                                             <div class="form-group">
+                                                                <label>Description</label>
+                                                                <input name="Description" type="text" class="form-control" placeholder="Description">
+                                                            </div>
+                                                 
+                                                            <div class="form-group">
+                                                                <label>Tags</label>
+                                                                <input name="tags" type="text" class="form-control" placeholder="Tags">
+                                                            </div> 
+
+                                                            <div class="form-group">
+                                                                <label>Icon</label>
+                                                                <input type="file" name="image" class="form-control">
+                                                            </div>
+
+                                                            <hr />
+                                                        </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="update('waze,https://www.waze.co.il','4','5')"">Close</button>
+                                              <button type="button" class="btn btn-primary" onsubmit="update('waze,https://www.waze.co.il','4','5')"> Save changes</button>
+                                            </div>
+                                          </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                      </div><!-- /.modal -->
+
+                                  
+                            
+                              </ul>
+
+                              <div class="user">
+                                  <img class="img-responsive img-circle" src="imgs\sites\12793download (1).jpg" />
+                                  <label class="name">haytham</label>
+                              </div>
+
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-2"></div>
+
+          </div>
+          
+    </div>
+
+ <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+                   <form role="form">
+                        <div class="form-group">
+                            <label>Url</label>
+                            <input name="siteurl" type="text" class="form-control" placeholder="url" value="this.">
+                        </div>
+                           <div class="form-group">
+                            <label>SiteName</label>
+                            <input name="sitename" type="text" class="form-control" placeholder="sitename">
+                        </div>
+                         <div class="form-group">
+                            <label>Description</label>
+                            <input name="Description" type="text" class="form-control" placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <input name="tags" type="text" class="form-control" placeholder="Tags">
+                        </div> 
+                        <div class="form-group">
+                            <label>Icon</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                        <hr />
+                    </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+
+
+<!--  
+   <form method="post" action="/update" enctype="multipart/form-data">
+    <div class="modal fade" id="modal-update-link" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">login</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                         
+                        <div class="form-group">
+                            <label>UserName</label>
+                            <input name="username" type="text" class="form-control" placeholder="UserName" value="haytham">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>password</label>
+                            <input name="password" type="password" class="form-control" placeholder="Password" value="pass">
+                        </div>
+                        <hr />
+                 
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <input  type="reset" class="btn btn-default" data-dismiss="modal" value="Cancel"/> 
+                    <input  type="submit" class="btn btn-primary" value="Update"/>
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    </form>-->
+
+
+    <!-- Lib Scripts -->
+
+
+    <script>
+        var deleteSite = function (SiteID, siteName) {
+
+            console.log("deleteSite function\n");
+            //alert("Delete odata of this site:" + siteName + "?");
+            var ans = confirm("Delete this site:" + siteName + "?");
+            if (ans == true)
+                return true;
+            else
+                return false;
+
+        };
+
+        var update = function (s1, s2, s3, s4) {
+            console.log("\n" +  s1 + " " + s2 + " " + s3 + " " + s4);
+        }
+
+    </script>
+
+    <script src="./../libs/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+    <script src="./../libs/bootstrap-3/bootstrap.min.js"></script>
+</body>
+</html>

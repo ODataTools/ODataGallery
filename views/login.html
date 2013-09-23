@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+     <link href="../libs/bootstrap-3/bootstrap.no-icons.min.css" rel="stylesheet" />
+    <link href="../styles/SignUp.css" rel="stylesheet" />
+</head>
+<body> 
+    <br />
+    <br />
+
+    <p> {{x1}} <br /> {{x2}} </p> 
+
+        <div class="container">
+       {{#each sites}} 
+          <div class="row">
+           <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <ul class="container list-unstyled" id="odata-links-list">
+                    <li class="row odata-link">
+                        <div class="col-md-2">
+                            <img class="img-responsive img-thumbnail" src="{{this.Picture}}" />
+                            <span class="odata-version label label-success"><small>OData server.</small><strong>3.0</strong></span>
+
+                            <ul class="features list-unstyled list-inline">
+                                <li class="feature active"><i class="icon-user"></i></li>
+                                <li class="feature active"><i class="icon-lock"></i></li>
+                                <li class="feature active"><i class="icon-star"></i></li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-10">
+                            <label class="title"> {{this.SiteName}}</label>
+
+                          <a class="link" href="{{this.SiteUrl}}" target="blank">Open !</a> 
+
+                            <p class="description">  {{this.Description}}  </p>
+                           
+                            <ul class="tags list-unstyled list-inline">
+
+                                
+                           {{sites.Tags}}
+                            {{#each sites.Tags}}
+                                <li><a href="{{this.site}}">{{this.tags}} Tags ddsfsdf</a></li>
+                                <!--<li><a href="/tags/movies"></a></li>
+                                <li><a href="/tags/cinema">cinema</a></li>
+                                <li><a href="/tags/actor">actor</a></li>
+                                <li><a href="/tags/fun">fun</a></li>-->
+                              
+                           {{/each}}
+                            </ul>
+
+                            <div class="user">
+                                <img class="img-responsive img-circle" src="{{this.Picture}}" />
+                               <label class="name">{{this.User}}</label>
+                            </div>
+
+                        </div>
+                     
+                         <script>   console.log({{this.tags}});  </script>                
+                   
+                       
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+          {{/each}}
+    </div>
+
+
+<!--    <h1 class="text-center"> Login Page </h1>
+    <form method="post" class="text-center" action="/login">
+        <label>User Name</label>
+        <input type="text" name="username" />
+        
+        <label>Password</label>
+        <input type="password" name="password" />
+        <br />
+        <br />
+
+        <input  class="btn-danger" type="submit" value="login" />
+    </form>-->
+
+    
+<script src="../libs/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+<script src="../libs/bootstrap-3/bootstrap.min.js"></script>
+
+</body>
+</html>

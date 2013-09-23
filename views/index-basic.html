@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/style.min.css">
+
+<ul id="contacts-list">
+    {{#each sites}}
+    <li class="contact">
+        <a href="#/contacts/{{this.id}}">
+            <img class="photo" src="{{this.photoUrl}}" />
+            <div class="details">
+                <label class="name">{{this.firstName}}</label>
+                <span class="address">{{this.address}}</span>
+                <span class="phone">{{this.phone}}</span>
+            </div>
+        </a>
+        <a class="btn-call" href="tel:{{this.phone}}">Call</a>
+    </li>
+                        <div class="col-md-10">
+                                {{this.SiteName}}
+                            <br/>
+                                {{this.SiteUrl}}                           
+                            <br/>
+                                {{this.Description}}  
+                            <br/>
+                                {{this.Tags}}                                                           
+                        </div>
+                {{/each}}
+</ul>
