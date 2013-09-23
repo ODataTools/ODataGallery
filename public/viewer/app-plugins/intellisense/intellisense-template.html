@@ -1,0 +1,35 @@
+﻿<div style="position: relative">
+
+    <input
+        type="text" id="intellisense-input" class="form-control" placeholder="query.." ng-model="model" />
+    <!-- ng-blur="isShowSuggestions = false"-->
+    <!--ng-keydown="onKeyDown($event);" ng-focus="showSuggestions('')"-->
+
+    <section id="intellisense-suggestions" ng-show="isShowSuggestions">
+
+        <!-- | orderBy:'@Name'| filter:{type:'query'} |-->
+
+        <ul id="query-suggestions" class="list-unstyled">
+
+            <li class="no-suggestions" ng-show="(suggestions.length == 0)">- no suggestions -</li>
+
+            <li data-ng-repeat="suggestion in suggestions"
+                ng-class="{'selected':($index == selectedSuggestionsIndex)}"
+                ng-click="onSuggestionClick($index,suggestion)">
+                <i ng-class="{
+                    'icon-gear': (suggestion.type == 'Entity'),
+                    'icon-file-text': (suggestion.type == 'Property'),
+                    'icon-link': (suggestion.type == 'NavigationProperty')
+                    }"></i>{{ suggestion['@Name']}}
+                <!--, 'icon-usd': (!suggestion['@EntityType'])-->
+            </li>
+        </ul>
+
+        <!--        <ul id="entity-suggestions" class="list-unstyled">
+            <li data-ng-repeat="item in suggestions | filter:{type:'entity'} | orderBy:'name'">
+                <i class="icon-gear"></i>{{item['@Name']}}
+            </li>
+        </ul>-->
+
+    </section>
+</div>
